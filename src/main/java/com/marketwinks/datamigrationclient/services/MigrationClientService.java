@@ -309,4 +309,151 @@ public class MigrationClientService {
 
 	}
 
+	@RequestMapping(value = "/UK_LSE/5MinsMacd/start", method = RequestMethod.GET)
+	public boolean ukmacd5Min() throws Exception {
+
+		boolean execution_result = false;
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(4);
+		String dateString = dtf.format(inputdate).toString();
+		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_lse_5mins_macd_datamigrate/" + dateString
+				+ "/migrate";
+		Thread.sleep(500);
+		HttpClient client = new DefaultHttpClient();
+		HttpGet request = new HttpGet(url);
+		HttpResponse response = client.execute(request);
+
+		if (response.getStatusLine().getStatusCode() == 200) {
+			execution_result = true;
+		}
+		return execution_result;
+
+	}
+
+	@RequestMapping(value = "/UK_LSE/15MinsMacd/start", method = RequestMethod.GET)
+	public boolean ukmacd15Min() throws Exception {
+
+		boolean execution_result = false;
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(7);
+		String dateString = dtf.format(inputdate).toString();
+		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_lse_15mins_macd_datamigrate/" + dateString
+				+ "/migrate";
+		Thread.sleep(500);
+		HttpClient client = new DefaultHttpClient();
+		HttpGet request = new HttpGet(url);
+		HttpResponse response = client.execute(request);
+
+		if (response.getStatusLine().getStatusCode() == 200) {
+			execution_result = true;
+		}
+		return execution_result;
+
+	}
+
+	@RequestMapping(value = "/UK_LSE/30MinsMacd/start", method = RequestMethod.GET)
+	public boolean ukmacd30Min() throws Exception {
+
+		boolean execution_result = false;
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(10);
+		String dateString = dtf.format(inputdate).toString();
+		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_lse_30mins_macd_datamigrate/" + dateString
+				+ "/migrate";
+		Thread.sleep(500);
+		HttpClient client = new DefaultHttpClient();
+		HttpGet request = new HttpGet(url);
+		HttpResponse response = client.execute(request);
+
+		if (response.getStatusLine().getStatusCode() == 200) {
+			execution_result = true;
+		}
+		return execution_result;
+
+	}
+
+	@RequestMapping(value = "/UK_LSE/HourlyMacd/start", method = RequestMethod.GET)
+	public boolean ukmacdHourly() throws Exception {
+
+		boolean execution_result = false;
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(14);
+		String dateString = dtf.format(inputdate).toString();
+		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_lse_hourly_macd_datamigrate/" + dateString
+				+ "/migrate";
+		Thread.sleep(500);
+		HttpClient client = new DefaultHttpClient();
+		HttpGet request = new HttpGet(url);
+		HttpResponse response = client.execute(request);
+
+		if (response.getStatusLine().getStatusCode() == 200) {
+			execution_result = true;
+		}
+		return execution_result;
+
+	}
+
+	@RequestMapping(value = "/UK_LSE/DailyMacd/start", method = RequestMethod.GET)
+	public boolean ukmacdDaily() throws Exception {
+
+		boolean execution_result = false;
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(30);
+		String dateString = dtf.format(inputdate).toString();
+		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_lse_daily_macd_datamigrate/" + dateString
+				+ "/migrate";
+		Thread.sleep(500);
+		HttpClient client = new DefaultHttpClient();
+		HttpGet request = new HttpGet(url);
+		HttpResponse response = client.execute(request);
+
+		if (response.getStatusLine().getStatusCode() == 200) {
+			execution_result = true;
+		}
+		return execution_result;
+
+	}
+
+	@RequestMapping(value = "/UK_LSE/WeeklyMacd/start", method = RequestMethod.GET)
+	public boolean ukmacdWeekly() throws Exception {
+
+		boolean execution_result = false;
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(90);
+		String dateString = dtf.format(inputdate).toString();
+		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_lse_daily_macd_datamigrate/" + dateString
+				+ "/migrate";
+		Thread.sleep(500);
+		HttpClient client = new DefaultHttpClient();
+		HttpGet request = new HttpGet(url);
+		HttpResponse response = client.execute(request);
+
+		if (response.getStatusLine().getStatusCode() == 200) {
+			execution_result = true;
+		}
+		return execution_result;
+
+	}
+
+	@RequestMapping(value = "/UK_LSE/MonthlyMacd/start", method = RequestMethod.GET)
+	public boolean ukmacdMonthly() throws Exception {
+
+		boolean execution_result = false;
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(180);
+		String dateString = dtf.format(inputdate).toString();
+		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_lse_monthly_macd_datamigrate/" + dateString
+				+ "/migrate";
+		Thread.sleep(500);
+		HttpClient client = new DefaultHttpClient();
+		HttpGet request = new HttpGet(url);
+		HttpResponse response = client.execute(request);
+
+		if (response.getStatusLine().getStatusCode() == 200) {
+			execution_result = true;
+		}
+		return execution_result;
+
+	}
+
 }
