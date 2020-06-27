@@ -28,6 +28,10 @@ public class MigrationClientService {
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(url);
 		HttpResponse response = client.execute(request);
+	
+		if(response.getStatusLine().getStatusCode() == 200) {
+		execution_result = true;
+		}
 		return execution_result;
 
 	}
@@ -45,6 +49,11 @@ public class MigrationClientService {
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(url);
 		HttpResponse response = client.execute(request);
+		
+
+		if(response.getStatusLine().getStatusCode() == 200) {
+		execution_result = true;
+		}	
 		return execution_result;
 
 	}
