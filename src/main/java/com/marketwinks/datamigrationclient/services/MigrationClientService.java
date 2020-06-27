@@ -28,9 +28,9 @@ public class MigrationClientService {
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(url);
 		HttpResponse response = client.execute(request);
-	
-		if(response.getStatusLine().getStatusCode() == 200) {
-		execution_result = true;
+
+		if (response.getStatusLine().getStatusCode() == 200) {
+			execution_result = true;
 		}
 		return execution_result;
 
@@ -49,15 +49,14 @@ public class MigrationClientService {
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(url);
 		HttpResponse response = client.execute(request);
-		
 
-		if(response.getStatusLine().getStatusCode() == 200) {
-		execution_result = true;
-		}	
+		if (response.getStatusLine().getStatusCode() == 200) {
+			execution_result = true;
+		}
 		return execution_result;
 
 	}
-	
+
 	@RequestMapping(value = "/UK_LSE/30MinsBuy/start", method = RequestMethod.GET)
 	public boolean ukbuy30Min() throws Exception {
 
@@ -71,15 +70,14 @@ public class MigrationClientService {
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(url);
 		HttpResponse response = client.execute(request);
-	
-		if(response.getStatusLine().getStatusCode() == 200) {
-		execution_result = true;
+
+		if (response.getStatusLine().getStatusCode() == 200) {
+			execution_result = true;
 		}
 		return execution_result;
 
 	}
 
-	
 	@RequestMapping(value = "/UK_LSE/HourlyBuy/start", method = RequestMethod.GET)
 	public boolean ukbuyHourly() throws Exception {
 
@@ -93,15 +91,14 @@ public class MigrationClientService {
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(url);
 		HttpResponse response = client.execute(request);
-	
-		if(response.getStatusLine().getStatusCode() == 200) {
-		execution_result = true;
+
+		if (response.getStatusLine().getStatusCode() == 200) {
+			execution_result = true;
 		}
 		return execution_result;
 
 	}
 
-	
 	@RequestMapping(value = "/UK_LSE/DailyBuy/start", method = RequestMethod.GET)
 	public boolean ukbuyDaily() throws Exception {
 
@@ -115,15 +112,14 @@ public class MigrationClientService {
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(url);
 		HttpResponse response = client.execute(request);
-	
-		if(response.getStatusLine().getStatusCode() == 200) {
-		execution_result = true;
+
+		if (response.getStatusLine().getStatusCode() == 200) {
+			execution_result = true;
 		}
 		return execution_result;
 
 	}
 
-	
 	@RequestMapping(value = "/UK_LSE/WeeklyBuy/start", method = RequestMethod.GET)
 	public boolean ukbuyWeekly() throws Exception {
 
@@ -137,15 +133,14 @@ public class MigrationClientService {
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(url);
 		HttpResponse response = client.execute(request);
-	
-		if(response.getStatusLine().getStatusCode() == 200) {
-		execution_result = true;
+
+		if (response.getStatusLine().getStatusCode() == 200) {
+			execution_result = true;
 		}
 		return execution_result;
 
 	}
 
-	
 	@RequestMapping(value = "/UK_LSE/MonthlyBuy/start", method = RequestMethod.GET)
 	public boolean ukbuyMonthly() throws Exception {
 
@@ -159,13 +154,159 @@ public class MigrationClientService {
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(url);
 		HttpResponse response = client.execute(request);
-	
-		if(response.getStatusLine().getStatusCode() == 200) {
-		execution_result = true;
+
+		if (response.getStatusLine().getStatusCode() == 200) {
+			execution_result = true;
 		}
 		return execution_result;
 
 	}
 
+	@RequestMapping(value = "/UK_LSE/5MinsSell/start", method = RequestMethod.GET)
+	public boolean uksell5Min() throws Exception {
+
+		boolean execution_result = false;
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(4);
+		String dateString = dtf.format(inputdate).toString();
+		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_sell_signals_5Mins_datamigrate/" + dateString
+				+ "/migrate";
+		Thread.sleep(500);
+		HttpClient client = new DefaultHttpClient();
+		HttpGet request = new HttpGet(url);
+		HttpResponse response = client.execute(request);
+
+		if (response.getStatusLine().getStatusCode() == 200) {
+			execution_result = true;
+		}
+		return execution_result;
+
+	}
+
+	@RequestMapping(value = "/UK_LSE/15MinsSell/start", method = RequestMethod.GET)
+	public boolean uksell15Min() throws Exception {
+
+		boolean execution_result = false;
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(7);
+		String dateString = dtf.format(inputdate).toString();
+		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_sell_signals_15Mins_datamigrate/" + dateString
+				+ "/migrate";
+		Thread.sleep(500);
+		HttpClient client = new DefaultHttpClient();
+		HttpGet request = new HttpGet(url);
+		HttpResponse response = client.execute(request);
+
+		if (response.getStatusLine().getStatusCode() == 200) {
+			execution_result = true;
+		}
+		return execution_result;
+
+	}
+
+	@RequestMapping(value = "/UK_LSE/30MinsSell/start", method = RequestMethod.GET)
+	public boolean uksell30Min() throws Exception {
+
+		boolean execution_result = false;
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(10);
+		String dateString = dtf.format(inputdate).toString();
+		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_sell_signals_30Mins_datamigrate/" + dateString
+				+ "/migrate";
+		Thread.sleep(500);
+		HttpClient client = new DefaultHttpClient();
+		HttpGet request = new HttpGet(url);
+		HttpResponse response = client.execute(request);
+
+		if (response.getStatusLine().getStatusCode() == 200) {
+			execution_result = true;
+		}
+		return execution_result;
+
+	}
+
+	@RequestMapping(value = "/UK_LSE/HourlySell/start", method = RequestMethod.GET)
+	public boolean uksellHourly() throws Exception {
+
+		boolean execution_result = false;
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(14);
+		String dateString = dtf.format(inputdate).toString();
+		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_sell_signals_Hourly_datamigrate/" + dateString
+				+ "/migrate";
+		Thread.sleep(500);
+		HttpClient client = new DefaultHttpClient();
+		HttpGet request = new HttpGet(url);
+		HttpResponse response = client.execute(request);
+
+		if (response.getStatusLine().getStatusCode() == 200) {
+			execution_result = true;
+		}
+		return execution_result;
+
+	}
+
+	@RequestMapping(value = "/UK_LSE/DailySell/start", method = RequestMethod.GET)
+	public boolean uksellDaily() throws Exception {
+
+		boolean execution_result = false;
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(30);
+		String dateString = dtf.format(inputdate).toString();
+		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_sell_signals_Daily_datamigrate/" + dateString
+				+ "/migrate";
+		Thread.sleep(500);
+		HttpClient client = new DefaultHttpClient();
+		HttpGet request = new HttpGet(url);
+		HttpResponse response = client.execute(request);
+
+		if (response.getStatusLine().getStatusCode() == 200) {
+			execution_result = true;
+		}
+		return execution_result;
+
+	}
+
+	@RequestMapping(value = "/UK_LSE/WeeklySell/start", method = RequestMethod.GET)
+	public boolean uksellWeekly() throws Exception {
+
+		boolean execution_result = false;
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(90);
+		String dateString = dtf.format(inputdate).toString();
+		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_sell_signals_Weekly_datamigrate/" + dateString
+				+ "/migrate";
+		Thread.sleep(500);
+		HttpClient client = new DefaultHttpClient();
+		HttpGet request = new HttpGet(url);
+		HttpResponse response = client.execute(request);
+
+		if (response.getStatusLine().getStatusCode() == 200) {
+			execution_result = true;
+		}
+		return execution_result;
+
+	}
+
+	@RequestMapping(value = "/UK_LSE/MonthlySell/start", method = RequestMethod.GET)
+	public boolean uksellMonthly() throws Exception {
+
+		boolean execution_result = false;
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(180);
+		String dateString = dtf.format(inputdate).toString();
+		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_sell_signals_Monthly_datamigrate/" + dateString
+				+ "/migrate";
+		Thread.sleep(500);
+		HttpClient client = new DefaultHttpClient();
+		HttpGet request = new HttpGet(url);
+		HttpResponse response = client.execute(request);
+
+		if (response.getStatusLine().getStatusCode() == 200) {
+			execution_result = true;
+		}
+		return execution_result;
+
+	}
 
 }
