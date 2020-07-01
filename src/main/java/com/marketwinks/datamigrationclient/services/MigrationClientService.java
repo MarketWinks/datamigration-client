@@ -603,4 +603,36 @@ public class MigrationClientService {
 
 	}
 
+	@RequestMapping(value = "/RSSFeedNewsArticlesMigrate/start", method = RequestMethod.GET)
+	public boolean RSSFeedNewsArticlesMigrate() throws Exception {
+
+		boolean execution_result = false;
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDateTime inputdate = LocalDateTime.now();
+		String dateString = dtf.format(inputdate).toString();
+		int timeInHour = 0;
+		if (LocalDateTime.now().getHour() > 4) {
+			timeInHour = LocalDateTime.now().getHour() - 4;
+		}
+		String timeInHourStr = null;
+		if (timeInHour < 10) {
+			timeInHourStr = "0" + Integer.toString(timeInHour);
+		} else {
+			timeInHourStr = Integer.toString(timeInHour);
+		}
+		String url = "https://datamigration-mw.herokuapp.com/baseURL/rssfeednewsarticle_datamigrate/" + dateString + "/"
+				+ timeInHourStr + "/migrate";
+
+		Thread.sleep(500);
+		HttpClient client = new DefaultHttpClient();
+		HttpGet request = new HttpGet(url);
+		HttpResponse response = client.execute(request);
+
+		if (response.getStatusLine().getStatusCode() == 200) {
+			execution_result = true;
+		}
+		return execution_result;
+
+	}
+
 }
