@@ -611,8 +611,11 @@ public class MigrationClientService {
 		LocalDateTime inputdate = LocalDateTime.now();
 		String dateString = dtf.format(inputdate).toString();
 		int timeInHour = 0;
-		if (LocalDateTime.now().getHour() > 4) {
-			timeInHour = LocalDateTime.now().getHour() - 4;
+//		if (LocalDateTime.now().getHour() > 4) {
+//			timeInHour = LocalDateTime.now().getHour() - 4;
+//		}
+		if (LocalDateTime.now().getHour() > 2) {
+			timeInHour = LocalDateTime.now().getHour() - 2;
 		}
 		String timeInHourStr = null;
 		if (timeInHour < 10) {
