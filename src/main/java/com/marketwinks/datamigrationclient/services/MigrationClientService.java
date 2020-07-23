@@ -20,7 +20,7 @@ public class MigrationClientService {
 
 		boolean execution_result = false;
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		LocalDateTime inputdate = LocalDateTime.now().minusDays(4);
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(1);
 		String dateString = dtf.format(inputdate).toString();
 		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_buy_signals_5Mins_datamigrate/" + dateString
 				+ "/migrate";
@@ -41,7 +41,7 @@ public class MigrationClientService {
 
 		boolean execution_result = false;
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		LocalDateTime inputdate = LocalDateTime.now().minusDays(7);
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(2);
 		String dateString = dtf.format(inputdate).toString();
 		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_buy_signals_15Mins_datamigrate/" + dateString
 				+ "/migrate";
@@ -62,7 +62,7 @@ public class MigrationClientService {
 
 		boolean execution_result = false;
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		LocalDateTime inputdate = LocalDateTime.now().minusDays(10);
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(3);
 		String dateString = dtf.format(inputdate).toString();
 		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_buy_signals_30Mins_datamigrate/" + dateString
 				+ "/migrate";
@@ -83,7 +83,7 @@ public class MigrationClientService {
 
 		boolean execution_result = false;
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		LocalDateTime inputdate = LocalDateTime.now().minusDays(14);
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(4);
 		String dateString = dtf.format(inputdate).toString();
 		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_buy_signals_Hourly_datamigrate/" + dateString
 				+ "/migrate";
@@ -104,7 +104,7 @@ public class MigrationClientService {
 
 		boolean execution_result = false;
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		LocalDateTime inputdate = LocalDateTime.now().minusDays(30);
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(5);
 		String dateString = dtf.format(inputdate).toString();
 		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_buy_signals_Daily_datamigrate/" + dateString
 				+ "/migrate";
@@ -125,7 +125,7 @@ public class MigrationClientService {
 
 		boolean execution_result = false;
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		LocalDateTime inputdate = LocalDateTime.now().minusDays(90);
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(10);
 		String dateString = dtf.format(inputdate).toString();
 		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_buy_signals_Weekly_datamigrate/" + dateString
 				+ "/migrate";
@@ -146,7 +146,7 @@ public class MigrationClientService {
 
 		boolean execution_result = false;
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		LocalDateTime inputdate = LocalDateTime.now().minusDays(180);
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(20);
 		String dateString = dtf.format(inputdate).toString();
 		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_buy_signals_Monthly_datamigrate/" + dateString
 				+ "/migrate";
@@ -167,7 +167,7 @@ public class MigrationClientService {
 
 		boolean execution_result = false;
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		LocalDateTime inputdate = LocalDateTime.now().minusDays(4);
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(1);
 		String dateString = dtf.format(inputdate).toString();
 		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_sell_signals_5Mins_datamigrate/" + dateString
 				+ "/migrate";
@@ -188,7 +188,7 @@ public class MigrationClientService {
 
 		boolean execution_result = false;
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		LocalDateTime inputdate = LocalDateTime.now().minusDays(7);
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(2);
 		String dateString = dtf.format(inputdate).toString();
 		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_sell_signals_15Mins_datamigrate/" + dateString
 				+ "/migrate";
@@ -209,7 +209,7 @@ public class MigrationClientService {
 
 		boolean execution_result = false;
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		LocalDateTime inputdate = LocalDateTime.now().minusDays(10);
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(3);
 		String dateString = dtf.format(inputdate).toString();
 		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_sell_signals_30Mins_datamigrate/" + dateString
 				+ "/migrate";
@@ -230,7 +230,7 @@ public class MigrationClientService {
 
 		boolean execution_result = false;
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		LocalDateTime inputdate = LocalDateTime.now().minusDays(14);
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(4);
 		String dateString = dtf.format(inputdate).toString();
 		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_sell_signals_Hourly_datamigrate/" + dateString
 				+ "/migrate";
@@ -251,7 +251,7 @@ public class MigrationClientService {
 
 		boolean execution_result = false;
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		LocalDateTime inputdate = LocalDateTime.now().minusDays(30);
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(5);
 		String dateString = dtf.format(inputdate).toString();
 		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_sell_signals_Daily_datamigrate/" + dateString
 				+ "/migrate";
@@ -272,7 +272,7 @@ public class MigrationClientService {
 
 		boolean execution_result = false;
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		LocalDateTime inputdate = LocalDateTime.now().minusDays(90);
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(10);
 		String dateString = dtf.format(inputdate).toString();
 		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_sell_signals_Weekly_datamigrate/" + dateString
 				+ "/migrate";
@@ -293,7 +293,7 @@ public class MigrationClientService {
 
 		boolean execution_result = false;
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		LocalDateTime inputdate = LocalDateTime.now().minusDays(180);
+		LocalDateTime inputdate = LocalDateTime.now().minusDays(20);
 		String dateString = dtf.format(inputdate).toString();
 		String url = "https://datamigration-mw.herokuapp.com/baseURL/uk_sell_signals_Monthly_datamigrate/" + dateString
 				+ "/migrate";
